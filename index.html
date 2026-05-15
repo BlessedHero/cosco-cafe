@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COSCO Cafe | Coffee. Soda. Cookies.</title>
+    <meta
+      name="description"
+      content="COSCO Cafe is an online-first Seoul cafe for crafted coffee, bright soda, and fresh-baked cookies."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="COSCO Cafe home">
+        <span class="brand-mark">C</span>
+        <span>COSCO Cafe</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#menu">Menu</a>
+        <a href="#story">Seoul</a>
+        <a href="#order">Order</a>
+      </nav>
+      <a class="nav-action" href="#order">Shop now</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/cosco-hero.png"
+          alt="Iced coffee, craft sodas, and cookies on a warm cafe counter"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Online-first cafe · Seoul</p>
+          <h1 id="hero-title">COSCO<br />Cafe</h1>
+          <p class="tagline">Coffee. Soda. Cookies.</p>
+          <p class="hero-copy">
+            Sip, fizz, bite. A polished Seoul cafe box for slow mornings, desk
+            breaks, and after-dinner cravings.
+          </p>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="button primary" href="#order">Build a box</a>
+            <a class="button secondary" href="#menu">See menu</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Cafe highlights">
+        <span>Fresh-baked daily</span>
+        <span>Small-batch sodas</span>
+        <span>Seoul same-day drops</span>
+        <span>Gift-ready packaging</span>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="section-intro">
+          <p class="eyebrow">The COSCO trio</p>
+          <h2 id="menu-title">A cafe rhythm built for the cart.</h2>
+          <p>
+            Choose a balanced set or mix the core pieces one by one. Everything
+            is photographed, packed, and delivered with the same calm detail.
+          </p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card coffee">
+            <p class="menu-kicker">01 · Coffee</p>
+            <h3>Signature Cold Coffee</h3>
+            <p>
+              Espresso depth, soft cream notes, and a clean finish made for ice.
+            </p>
+            <span>from ₩5,800</span>
+          </article>
+          <article class="menu-card soda">
+            <p class="menu-kicker">02 · Soda</p>
+            <h3>Botanical Soda</h3>
+            <p>
+              Bright bubbles in soft blue, green, and cola-red seasonal flavors.
+            </p>
+            <span>from ₩6,200</span>
+          </article>
+          <article class="menu-card cookie">
+            <p class="menu-kicker">03 · Cookies</p>
+            <h3>Chunk Cookies</h3>
+            <p>
+              Thick-baked cookies with crisp edges, dense centers, and deep
+              chocolate.
+            </p>
+            <span>from ₩4,400</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="shop-band" id="order" aria-labelledby="order-title">
+        <div class="shop-copy">
+          <p class="eyebrow">COSCO.kr preview</p>
+          <h2 id="order-title">Build your Seoul cafe box.</h2>
+          <p>
+            Start with coffee, add fizz, finish with cookies. Every order is
+            styled like a tiny cafe counter arriving at your door.
+          </p>
+        </div>
+        <form class="order-panel" aria-label="Cafe box builder">
+          <label>
+            Coffee
+            <select>
+              <option>Cold coffee · 2 cups</option>
+              <option>Cold coffee · 4 cups</option>
+              <option>Skip coffee</option>
+            </select>
+          </label>
+          <label>
+            Soda
+            <select>
+              <option>Blue botanical + cola berry</option>
+              <option>Soft green citrus + cola berry</option>
+              <option>Skip soda</option>
+            </select>
+          </label>
+          <label>
+            Cookies
+            <select>
+              <option>Chocolate chunk · 4 pack</option>
+              <option>Double cacao · 4 pack</option>
+              <option>Mixed · 6 pack</option>
+            </select>
+          </label>
+          <button type="button">Add set · ₩29,000</button>
+        </form>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="story-title">
+        <div class="story-stat">
+          <span>11:00</span>
+          <p>Daily online drop opens for Seoul delivery.</p>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">Subtle by design</p>
+          <h2 id="story-title">Premium without the noise.</h2>
+          <p>
+            COSCO keeps the feeling quiet: cream surfaces, espresso shadows,
+            cookie warmth, and a few soda-bright accents. The result is a brand
+            that feels trendy without chasing glitter.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>COSCO Cafe</span>
+      <span>Coffee. Soda. Cookies.</span>
+      <a href="mailto:hello@cosco.kr">hello@cosco.kr</a>
+    </footer>
+  </body>
+</html>
