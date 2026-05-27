@@ -51,7 +51,7 @@ a {
   transform: translateX(-50%);
   border: 1px solid rgba(255, 250, 241, 0.64);
   border-radius: 999px;
-  padding: 10px 12px 10px 16px;
+  padding: 12px 14px 12px 18px;
   background: rgba(255, 250, 241, 0.78);
   box-shadow: 0 16px 44px rgba(46, 29, 22, 0.12);
   backdrop-filter: blur(18px);
@@ -65,31 +65,63 @@ a {
 }
 
 .brand {
-  gap: 12px;
+  gap: 16px;
   font-weight: 800;
 }
 
 .brand-mark {
   position: relative;
   display: inline-grid;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 78px;
+  height: 78px;
+  flex: 0 0 78px;
   place-items: center;
   border-radius: 50%;
-  border: 1px solid rgba(255, 250, 241, 0.5);
+  border: 1px solid rgba(255, 250, 241, 0.72);
   background:
-    radial-gradient(circle at 72% 24%, rgba(255, 250, 241, 0.18), transparent 18px),
+    radial-gradient(circle at 70% 24%, rgba(255, 250, 241, 0.28), transparent 24px),
+    radial-gradient(circle at 36% 68%, rgba(169, 219, 226, 0.16), transparent 22px),
     var(--espresso);
   box-shadow:
     inset 0 0 0 2px rgba(255, 250, 241, 0.1),
-    0 10px 24px rgba(46, 29, 22, 0.16);
+    0 14px 30px rgba(46, 29, 22, 0.22),
+    0 0 26px rgba(169, 219, 226, 0.24);
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.brand-mark::before {
+  inset: -8px;
+  border: 1px solid rgba(255, 250, 241, 0.6);
+  background: conic-gradient(
+    from 0deg,
+    rgba(169, 219, 226, 0),
+    rgba(169, 219, 226, 0.95),
+    rgba(201, 154, 98, 0.88),
+    rgba(169, 49, 38, 0.92),
+    rgba(169, 219, 226, 0)
+  );
+  opacity: 0.8;
+  mask: radial-gradient(circle, transparent 67%, #000 69%);
+  animation: halo-spin 7s linear infinite;
+}
+
+.brand-mark::after {
+  inset: 7px;
+  border: 1px solid rgba(255, 250, 241, 0.18);
+  box-shadow: inset 0 0 18px rgba(255, 250, 241, 0.14);
 }
 
 .mark-letter {
   color: var(--paper);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.42rem;
+  font-size: 2.65rem;
   font-weight: 700;
   line-height: 1;
   transform: translateY(-1px);
@@ -98,32 +130,37 @@ a {
 .mark-dot {
   position: absolute;
   display: block;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(46, 29, 22, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(46, 29, 22, 0.2),
+    0 0 12px currentColor,
+    0 0 22px currentColor;
 }
 
 .dot-coffee {
-  right: 9px;
-  bottom: 10px;
-  width: 6px;
-  height: 6px;
+  width: 13px;
+  height: 13px;
   background: #fff2d7;
+  color: rgba(255, 242, 215, 0.9);
+  animation: orbit-coffee 5.8s linear infinite;
 }
 
 .dot-soda {
-  right: 13px;
-  top: 9px;
-  width: 5px;
-  height: 5px;
+  width: 12px;
+  height: 12px;
   background: var(--soda-blue);
+  color: rgba(169, 219, 226, 0.95);
+  animation: orbit-soda 6.6s linear infinite;
 }
 
 .dot-cookie {
-  left: 10px;
-  bottom: 9px;
-  width: 4px;
-  height: 4px;
+  width: 11px;
+  height: 11px;
   background: var(--cookie);
+  color: rgba(201, 154, 98, 0.95);
+  animation: orbit-cookie 7.4s linear infinite;
 }
 
 .brand-wordmark {
@@ -134,7 +171,7 @@ a {
 
 .brand-name {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.16rem;
+  font-size: 1.34rem;
   font-weight: 700;
 }
 
@@ -144,6 +181,55 @@ a {
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+@keyframes halo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-coffee {
+  0% {
+    transform: translate(-50%, -50%) rotate(18deg) translateX(43px) rotate(-18deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(198deg) translateX(43px) rotate(-198deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(378deg) translateX(43px) rotate(-378deg) scale(1);
+  }
+}
+
+@keyframes orbit-soda {
+  0% {
+    transform: translate(-50%, -50%) rotate(142deg) translateX(43px) rotate(-142deg) scale(1.15);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(322deg) translateX(43px) rotate(-322deg) scale(0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(502deg) translateX(43px) rotate(-502deg) scale(1.15);
+  }
+}
+
+@keyframes orbit-cookie {
+  0% {
+    transform: translate(-50%, -50%) rotate(266deg) translateX(43px) rotate(-266deg) scale(0.95);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(446deg) translateX(43px) rotate(-446deg) scale(1.18);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(626deg) translateX(43px) rotate(-626deg) scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark::before,
+  .mark-dot {
+    animation: none;
+  }
 }
 
 .nav-links {
@@ -529,7 +615,7 @@ button {
     right: 10px;
     width: auto;
     transform: none;
-    padding-left: 10px;
+    padding: 10px 12px;
   }
 
   .brand span:last-child {
@@ -538,6 +624,68 @@ button {
 
   .nav-action {
     display: none;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+
+  .brand-mark::before {
+    inset: -6px;
+  }
+
+  .mark-letter {
+    font-size: 2.1rem;
+  }
+
+  .brand-name {
+    font-size: 1.08rem;
+  }
+
+  .brand-sub {
+    font-size: 0.68rem;
+  }
+
+  @keyframes orbit-coffee {
+    0% {
+      transform: translate(-50%, -50%) rotate(18deg) translateX(34px) rotate(-18deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(198deg) translateX(34px) rotate(-198deg) scale(1.2);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(378deg) translateX(34px) rotate(-378deg) scale(1);
+    }
+  }
+
+  @keyframes orbit-soda {
+    0% {
+      transform: translate(-50%, -50%) rotate(142deg) translateX(34px) rotate(-142deg) scale(1.15);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(322deg) translateX(34px) rotate(-322deg) scale(0.95);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(502deg) translateX(34px) rotate(-502deg) scale(1.15);
+    }
+  }
+
+  @keyframes orbit-cookie {
+    0% {
+      transform: translate(-50%, -50%) rotate(266deg) translateX(34px) rotate(-266deg) scale(0.95);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(446deg) translateX(34px) rotate(-446deg) scale(1.18);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(626deg) translateX(34px) rotate(-626deg) scale(0.95);
+    }
   }
 
   .hero {
